@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h3>@WebApps_Offical</h3>
+        <h5>3 posts   450k followers   0 following</h5>
+        <br>
+        <br>
+
+        <div class="all_posts">
+            <div class="one_post">
+                <% for (let i = 0; i <post.length; i++) {%>
+                <a href="/<%= post[i].post_id %>/delete"><img src="/images/<%=post[i].post_img %>" alt="Girl in a jacket" width="300" height="300"></a>
+                <div class="part_post">
+                    <h7><%= post[i].post_caption %></h7>
+                    <img src="/images/Heart_icon.png" width="20" height="30" alt="heart">
+                    <h7>10 likes</h7>
+                <% } %>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        <button class="btn center orange lighten-3 modal-trigger" href="#openform">+</button>
+            
+        </div>
+    
+    <div class="modal" id="openform">
+        <div class="modal-content">
+            <form action="/" method="post">
+                <label for="post_img">Post image here:</label>
+                <input type="file" id="post_img" name="post_img">
+                <br>
+                <br>
+
+                <label for="post_caption">Caption:</label>
+                <br>
+                <textarea name="post_caption" id="post_caption" cols="30" rows="20"></textarea>
+                <div class="right">
+                    <input type="submit" value="submit" class="btn orange lighten-3 ">
+                </div>
+                    
+            </form>
+        </div>
+
+    </div>
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>M.AutoInit();</script>
+
+</body>
+</html>
