@@ -14,22 +14,28 @@
 </head>
 <body>
     <div class="container">
-        <h3>@WebApps_Offical</h3>
-        <h5>3 posts   450k followers   0 following</h5>
+        <div class="heading">
+            <h3 style="text-align: center;">@WebApps_Offical</h3>
+            <div class="sub">
+                <h5><%=post.length%> posts</h5>
+                <h5>450k followers</h5>
+                <h5>0 following</h5>
+            </div>
+        </div>
         <br>
         <br>
 
         <div class="all_posts">
-            <div class="one_post">
-                <% for (let i = 0; i <post.length; i++) {%>
-                <a href="/<%= post[i].post_id %>/delete"><img src="/images/<%=post[i].post_img %>" alt="Girl in a jacket" width="300" height="300"></a>
-                <div class="part_post">
-                    <h7><%= post[i].post_caption %></h7>
-                    <img src="/images/Heart_icon.png" width="20" height="30" alt="heart">
-                    <h7>10 likes</h7>
-                <% } %>
+            <% for (let i = 0; i <post.length; i++) {%>
+                <div class="one_post">
+                    <a href="/<%= post[i].post_id %>/delete"><img src="/images/<%=post[i].post_img %>" alt="Girl in a jacket" width="300" height="300"></a>
+                    <div class="part_post">
+                        <h7 style="margin-right: 8px;"><%= post[i].post_caption %></h7>
+                        <img src="/images/Heart_icon.png" width="20px" alt="heart">
+                        <h7>0 likes</h7>
+                    </div>
                 </div>
-            </div>
+            <% } %>
         </div>
         <br>
         <br>
